@@ -1,0 +1,16 @@
+D:\Documentos\cursos\bootcamp-DIO\appSeries\DIO.Series\obj\Debug\net5.0\DIO.Series.csprojAssemblyReference.cache
+D:\Documentos\cursos\bootcamp-DIO\appSeries\DIO.Series\obj\Debug\net5.0\DIO.Series.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\cursos\bootcamp-DIO\appSeries\DIO.Series\obj\Debug\net5.0\DIO.Series.AssemblyInfoInputs.cache
+D:\Documentos\cursos\bootcamp-DIO\appSeries\DIO.Series\obj\Debug\net5.0\DIO.Series.AssemblyInfo.cs
+D:\Documentos\cursos\bootcamp-DIO\appSeries\DIO.Series\obj\Debug\net5.0\DIO.Series.csproj.CoreCompileInputs.cache
+D:\Documentos\cursos\bootcamp-DIO\appSeries\DIO.Series\bin\Debug\net5.0\DIO.Series.exe
+D:\Documentos\cursos\bootcamp-DIO\appSeries\DIO.Series\bin\Debug\net5.0\DIO.Series.deps.json
+D:\Documentos\cursos\bootcamp-DIO\appSeries\DIO.Series\bin\Debug\net5.0\DIO.Series.runtimeconfig.json
+D:\Documentos\cursos\bootcamp-DIO\appSeries\DIO.Series\bin\Debug\net5.0\DIO.Series.runtimeconfig.dev.json
+D:\Documentos\cursos\bootcamp-DIO\appSeries\DIO.Series\bin\Debug\net5.0\DIO.Series.dll
+D:\Documentos\cursos\bootcamp-DIO\appSeries\DIO.Series\bin\Debug\net5.0\ref\DIO.Series.dll
+D:\Documentos\cursos\bootcamp-DIO\appSeries\DIO.Series\bin\Debug\net5.0\DIO.Series.pdb
+D:\Documentos\cursos\bootcamp-DIO\appSeries\DIO.Series\obj\Debug\net5.0\DIO.Series.dll
+D:\Documentos\cursos\bootcamp-DIO\appSeries\DIO.Series\obj\Debug\net5.0\ref\DIO.Series.dll
+D:\Documentos\cursos\bootcamp-DIO\appSeries\DIO.Series\obj\Debug\net5.0\DIO.Series.pdb
+D:\Documentos\cursos\bootcamp-DIO\appSeries\DIO.Series\obj\Debug\net5.0\DIO.Series.genruntimeconfig.cache
