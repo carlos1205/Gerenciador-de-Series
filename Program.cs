@@ -51,7 +51,7 @@ namespace DIO.Series
 
             Console.WriteLine(serie);
         }
-
+        
         public static void ExcluirSerie()
         {
             Console.WriteLine("Excluir Série");
@@ -60,6 +60,14 @@ namespace DIO.Series
 
             repositorio.Exclui(indiceSerie);
         }
+        public static void InserirSerie()
+        {
+            Console.WriteLine("Inserir Série");
+
+            Serie novaSerie = ObterDadosSerie(repositorio.ProximoId());
+
+            repositorio.Insere(novaSerie);
+        }
 
         public static void AtualizarSerie()
         {
@@ -67,37 +75,7 @@ namespace DIO.Series
             Console.Write("Digite o Id da série: ");
             int indiceSerie = int.Parse(Console.ReadLine());
 
-            foreach (int i in Enum.GetValues(typeof(Genero)))
-            {
-                Console.WriteLine("{0} - {1}", i, Enum.GetName(typeof(Genero), i));
-            }
-            Console.Write("Digite o gênero entre as opções a cima: ");
-            int entradaGenero = int.Parse(Console.ReadLine());
-
-            Console.Write("Digite o título da Série: ");
-            string entradaTitulo = Console.ReadLine();
-
-            Console.Write("Digite o ano de inicio da série: ");
-            int entradaAno = int.Parse(Console.ReadLine());
-
-            Console.Write("Digite a temporada da série: ");
-            int entradaTemporada = int.Parse(Console.ReadLine());
-
-            Console.Write("Digite o numero de episodios que a temporada tem: ");
-            int entradaQuantidadeEpisodios = int.Parse(Console.ReadLine());
-
-            Console.Write("Digite a descrição da série: ");
-            string entradaDescricao = Console.ReadLine();
-
-            Serie novaSerie = new Serie(
-                id: indiceSerie,
-                genero: (Genero)entradaGenero,
-                titulo: entradaTitulo,
-                temporada: entradaTemporada,
-                quantidadeEpisodio: entradaQuantidadeEpisodios,
-                ano: entradaAno,
-                descricao: entradaDescricao
-            );
+            Serie novaSerie = ObterDadosSerie(indiceSerie);
 
             repositorio.Atualiza(indiceSerie, novaSerie);
             
@@ -121,14 +99,13 @@ namespace DIO.Series
             }
         }
 
-        public static void InserirSerie()
-        {
-            Console.WriteLine("Inserir Série");
+        public static Serie ObterDadosSerie(int id){
 
             foreach(int i in Enum.GetValues(typeof(Genero)))
             {
                 Console.WriteLine("{0} - {1}", i, Enum.GetName(typeof(Genero), i));
             }
+            
             Console.Write("Digite o gênero entre as opções acima: ");
             int entradaGenero = int.Parse(Console.ReadLine());
 
@@ -147,8 +124,8 @@ namespace DIO.Series
             Console.Write("Digite a descrição da série: ");
             string entradaDescricao = Console.ReadLine();
 
-            Serie novaSerie = new Serie(
-                id: repositorio.ProximoId(),
+            return new Serie(
+                id: id,
                 genero: (Genero)entradaGenero,
                 titulo: entradaTitulo,
                 temporada: entradaTemporada,
@@ -156,8 +133,6 @@ namespace DIO.Series
                 ano: entradaAno,
                 descricao: entradaDescricao
             );
-
-            repositorio.Insere(novaSerie);
         }
 
         private static string ObterOpcaoUsuario()
