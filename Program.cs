@@ -80,6 +80,12 @@ namespace DIO.Series
             Console.Write("Digite o ano de inicio da série: ");
             int entradaAno = int.Parse(Console.ReadLine());
 
+            Console.Write("Digite a temporada da série: ");
+            int entradaTemporada = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite o numero de episodios que a temporada tem: ");
+            int entradaQuantidadeEpisodios = int.Parse(Console.ReadLine());
+
             Console.Write("Digite a descrição da série: ");
             string entradaDescricao = Console.ReadLine();
 
@@ -87,6 +93,8 @@ namespace DIO.Series
                 id: indiceSerie,
                 genero: (Genero)entradaGenero,
                 titulo: entradaTitulo,
+                temporada: entradaTemporada,
+                quantidadeEpisodio: entradaQuantidadeEpisodios,
                 ano: entradaAno,
                 descricao: entradaDescricao
             );
@@ -130,6 +138,12 @@ namespace DIO.Series
             Console.Write("Digite o ano de inicio da série: ");
             int entradaAno = int.Parse(Console.ReadLine());
 
+            Console.Write("Digite a temporada da série: ");
+            int entradaTemporada = int.Parse(Console.ReadLine());
+
+            Console.Write("Digite o numero de episodios que a temporada tem: ");
+            int entradaQuantidadeEpisodios = int.Parse(Console.ReadLine());
+
             Console.Write("Digite a descrição da série: ");
             string entradaDescricao = Console.ReadLine();
 
@@ -137,6 +151,8 @@ namespace DIO.Series
                 id: repositorio.ProximoId(),
                 genero: (Genero)entradaGenero,
                 titulo: entradaTitulo,
+                temporada: entradaTemporada,
+                quantidadeEpisodio: entradaQuantidadeEpisodios,
                 ano: entradaAno,
                 descricao: entradaDescricao
             );

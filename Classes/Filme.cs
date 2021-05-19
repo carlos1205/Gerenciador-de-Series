@@ -2,21 +2,18 @@ using System;
 
 namespace DIO.Series
 {
-    public class Serie : EntidadeBase
+    public class Filme : EntidadeBase
     {
-        
-        private int Temporada { get; set; }
-        private int QuantidadeEpisodio { get; set; }
+        private string Duracao { get; set; }
 
-        public Serie(int id, Genero genero, string titulo, string descricao, int ano, int temporada, int quantidadeEpisodio)
+        public Filme(int id, Genero genero, string titulo, string descricao, int ano, string duracao)
         {
             this.Id = id;
             this.Genero = genero;
             this.Titulo = titulo;
             this.Descricao = descricao;
             this.Ano = ano;
-            this.Temporada = temporada;
-            this.QuantidadeEpisodio = quantidadeEpisodio;
+            this.Duracao = duracao;
             this.Excluido = false;
         }
 
@@ -27,10 +24,9 @@ namespace DIO.Series
             retorno += "Titulo: " + this.Titulo + Environment.NewLine;
             retorno += "Descrição: " + this.Descricao + Environment.NewLine;
             retorno += "Ano de Início: " + this.Ano + Environment.NewLine;
-            retorno += "Temporada: " + this.Temporada + Environment.NewLine;
-            retorno += "Numéro de episodios: " + this.QuantidadeEpisodio + Environment.NewLine;
+            retorno += "Duração: " + this.Duracao + Environment.NewLine;
             retorno += "Excluido: " + this.Excluido;
             return retorno;
         }
-    }
+    } 
 }
