@@ -3,16 +3,14 @@
 namespace DIO.Series
 {
     class Program
-    {
-        static SerieRepositorio repositorioSerie = new SerieRepositorio();
-        static FilmeRepositorio repositorioFilme = new FilmeRepositorio();
+    {   
+        static Repositorio repo = new Repositorio();
         static void Main(string[] args)
         {
             string opcaoUsuario;
-
             do{
                 opcaoUsuario = ObterOpcaoUsuario();
-
+                
                 switch(opcaoUsuario)
                 {
                     case "1":
@@ -63,7 +61,7 @@ namespace DIO.Series
             Console.Write("Digite o Id da série: ");
             int indiceSerie = int.Parse(Console.ReadLine());
 
-            var serie = repositorioSerie.RetornaPorId(indiceSerie);
+            var serie = repo.RetornaPorId(Tipo.Serie ,indiceSerie);
 
             Console.WriteLine(serie);
         }
@@ -74,15 +72,15 @@ namespace DIO.Series
             Console.Write("Digite o Id da série: ");
             int indiceSerie = int.Parse(Console.ReadLine());
 
-            repositorioSerie.Exclui(indiceSerie);
+            repo.Exclui(Tipo.Serie ,indiceSerie);
         }
         public static void InserirSerie()
         {
             Console.WriteLine("Inserir Série");
 
-            Serie novaSerie = ObterDadosSerie(repositorioSerie.ProximoId());
+            Serie novaSerie = ObterDadosSerie(repo.ProximoId(Tipo.Serie));
 
-            repositorioSerie.Insere(novaSerie);
+            repo.Insere(Tipo.Serie, novaSerie);
         }
 
         public static void AtualizarSerie()
@@ -93,14 +91,14 @@ namespace DIO.Series
 
             Serie novaSerie = ObterDadosSerie(indiceSerie);
 
-            repositorioSerie.Atualiza(indiceSerie, novaSerie);
+            repo.Atualiza(Tipo.Serie, indiceSerie, novaSerie);
             
         }
 
         public static void ListarSerie(){
             Console.WriteLine("Listar Séries");
 
-            var lista = repositorioSerie.Lista();
+            var lista = repo.Lista(Tipo.Serie);
             if(lista.Count == 0)
             {
                 Console.WriteLine("Nenhuma Série Cadastrada");
@@ -109,8 +107,9 @@ namespace DIO.Series
 
             foreach(var serie in lista)
             {
-                var excluido = serie.IsExcluido();
-                Console.WriteLine("#ID {0}: - {1}{2}", serie.RetornaId(), serie.RetornaTitulo(), (excluido ? "(Excluído)" : ""));
+                var s = serie as Serie;
+                var excluido = s.IsExcluido();
+                Console.WriteLine("#ID {0}: - {1}{2}", s.RetornaId(), s.RetornaTitulo(), (excluido ? "(Excluído)" : ""));
 
             }
         }
@@ -157,7 +156,7 @@ namespace DIO.Series
             Console.Write("Digite o Id do Filme: ");
             int indiceSerie = int.Parse(Console.ReadLine());
 
-            var filme = repositorioFilme.RetornaPorId(indiceSerie);
+            var filme = repo.RetornaPorId(Tipo.Filme, indiceSerie);
 
             Console.WriteLine(filme);
         }
@@ -168,15 +167,15 @@ namespace DIO.Series
             Console.Write("Digite o Id do Filme: ");
             int indiceSerie = int.Parse(Console.ReadLine());
 
-            repositorioFilme.Exclui(indiceSerie);
+            repo.Exclui(Tipo.Filme, indiceSerie);
         }
         public static void InserirFilme()
         {
             Console.WriteLine("Inserir Filme");
 
-            Filme novoFilme = ObterDadosFilme(repositorioFilme.ProximoId());
+            Filme novoFilme = ObterDadosFilme(repo.ProximoId(Tipo.Filme));
 
-            repositorioFilme.Insere(novoFilme);
+            repo.Insere(Tipo.Filme, novoFilme);
         }
 
         public static void AtualizarFilme()
@@ -187,14 +186,14 @@ namespace DIO.Series
 
             Filme novoFilme = ObterDadosFilme(indiceFilme);
 
-            repositorioFilme.Atualiza(indiceFilme, novoFilme);
+            repo.Atualiza(Tipo.Filme, indiceFilme, novoFilme);
             
         }
 
         public static void ListarFilme(){
             Console.WriteLine("Listar Filmes");
 
-            var lista = repositorioFilme.Lista();
+            var lista = repo.Lista(Tipo.Filme);
             if(lista.Count == 0)
             {
                 Console.WriteLine("Nenhum Filme Cadastrado");
@@ -203,8 +202,9 @@ namespace DIO.Series
 
             foreach(var filme in lista)
             {
-                var excluido = filme.IsExcluido();
-                Console.WriteLine("#ID {0}: - {1}{2}", filme.RetornaId(), filme.RetornaTitulo(), (excluido ? "(Excluído)" : ""));
+                var f = filme as Filme;
+                var excluido = f.IsExcluido();
+                Console.WriteLine("#ID {0}: - {1}{2}", f.RetornaId(), f.RetornaTitulo(), (excluido ? "(Excluído)" : ""));
             }
         }
 
